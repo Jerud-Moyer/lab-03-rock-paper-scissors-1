@@ -25,6 +25,27 @@ test('it should call getRandomThrow, and return true if the output string is roc
     expect.equal(actual, expected);
 });
 
+test('it should call getRandomThrow, and return a type of string', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const testThrow = getRandomThrow();
+    let compareResult = null;
+    
+    if (typeof(testThrow) === 'string') {
+        compareResult = true;
+    } else {
+        compareResult = false;
+    }
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const expected = true;
+    const actual = compareResult;
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+});
+
 test('it should take two identical strings - rock and rock - and return draw for a tie', (expect) => {
     //Arrange
     // Set up your arguments and expectations
