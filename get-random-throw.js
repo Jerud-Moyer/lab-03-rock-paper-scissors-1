@@ -5,9 +5,9 @@ export function getRandomThrow() {
   if (rpsRandomNumber === 1) {
     return "rock";
   } else if (rpsRandomNumber === 2) {
-    return "scissors";
-  } else if (rpsRandomNumber === 3) {
     return "paper";
+  } else if (rpsRandomNumber === 3) {
+    return "scissors";
   }
 }
 
