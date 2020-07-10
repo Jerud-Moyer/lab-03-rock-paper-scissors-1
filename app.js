@@ -32,15 +32,15 @@ button.addEventListener('click', () => {
     const getResult = checkResults(userGuess, computerThrow);
 
     // compare the user guess to the correct answer
-    if (getResult === "draw") {
-      drawsData++;
+    if (getResult === 'draw') {
+        drawsData++;
         current.textContent = 'You got a draw';
-    } else if (getResult === "win") {
-      winsData++;
+    } else if (getResult === 'win') {
+        winsData++;
         current.textContent = 'YOU WON';
-    } else if (getResult === "lose") {
-      lossesData++;
-        current.textContent = "YOU LOST";
+    } else if (getResult === 'lose') {
+        lossesData++;
+        current.textContent = 'YOU LOST';
     }
 
     total.textContent = 'total: ' + totalGuesses;
@@ -50,28 +50,37 @@ button.addEventListener('click', () => {
 });
 
 const resetTheGame = () => {
-  const doReset = window.confirm('Would you like to play again?');
+    const doReset = window.confirm('Would you like to play again?');
 
-  if (doReset === true) {
+    if (doReset === true) {
       //document.location.reload();
-      resetCount++;
-      totalGuesses = 0;
-      winsData = 0;
-      lossesData = 0;
-      drawsData = 0;
+        resetCount++;
+        // totalGuesses = 0;
+        // winsData = 0;
+        // lossesData = 0;
+        // drawsData = 0;
 
-      total.textContent = 'total plays: ' + totalGuesses;
-      wins.textContent = 'wins: ' + winsData;
-      losses.textContent = 'losses: ' + lossesData;
-      draws.textContent = 'draws: ' + drawsData;
-      resets.textContent = 'resets: ' + resetCount++;
-
-  } else {
-      return false;
-  }
+        // total.textContent = 'total plays: ' + totalGuesses;
+        // wins.textContent = 'wins: ' + winsData;
+        // losses.textContent = 'losses: ' + lossesData;
+        // draws.textContent = 'draws: ' + drawsData;
+        resets.textContent = 'resets: ' + resetCount++;
+        renderResults();
+    } else {
+        return false;
+    }
 };
 resetButton.addEventListener('click', resetTheGame);
-
+function renderResults() {
+    let winsData = 0;
+    let drawsData = 0;
+    let lossesData = 0;
+    let totalGuesses = 0;
+    total.textContent = 'total plays: ' + totalGuesses;
+    wins.textContent = 'wins: ' + winsData;
+    losses.textContent = 'losses: ' + lossesData;
+    draws.textContent = 'draws: ' + drawsData;
+}
 // const playerRandRoll = getRandomThrow();
 // const computerRandRoll = getRandomThrow();
 // console.log("Player choice is " + playerRandRoll);
