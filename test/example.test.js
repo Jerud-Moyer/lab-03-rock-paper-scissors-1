@@ -7,24 +7,8 @@ import { checkResults } from '../check-results.js';
 const test = QUnit.test;
 
 test('it should call getRandomThrow, and return true if the output string is rock, paper or scissors', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
     const testThrow = getRandomThrow();
-    let compareResult = null;
-
-    if (testThrow === 'rock' || testThrow === 'paper' || testThrow === 'scissors') {
-        compareResult = true;
-    } else {
-        compareResult = false;
-    }
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const expected = true;
-    const actual = compareResult;
-
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.ok(testThrow === 'rock' || testThrow === 'paper' || testThrow === 'scissors');
 });
 
 test('it should call getRandomThrow, and return a type of string', (expect) => {
